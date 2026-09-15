@@ -315,7 +315,11 @@
         document.getElementById('thanks').scrollIntoView({behavior:'smooth', block:'center'});
       } else { throw new Error(data.message || 'send failed'); }
     }catch(err){
-      status.textContent = 'משהו השתבש. נסו שוב. (' + (err.message || 'שגיאת רשת') + ')';
+      status.textContent = 'משהו השתבש. נסו שוב. ';
+      const why = document.createElement('span');
+      why.dir = 'ltr'; why.style.unicodeBidi = 'isolate'; why.style.display = 'inline-block';
+      why.textContent = '(' + (err.message || 'שגיאת רשת') + ')';
+      status.appendChild(why);
       status.classList.add('err'); sendBtn.disabled = false;
     }
   });
