@@ -315,7 +315,7 @@
         document.getElementById('thanks').scrollIntoView({behavior:'smooth', block:'center'});
       } else { throw new Error(data.message || 'send failed'); }
     }catch(err){
-      status.textContent = 'משהו השתבש. נסו שוב.';
+      status.textContent = 'משהו השתבש. נסו שוב. (' + (err.message || 'שגיאת רשת') + ')';
       status.classList.add('err'); sendBtn.disabled = false;
     }
   });
