@@ -305,7 +305,7 @@
     document.getElementById('subj').value = 'אישור הגעה: ' + name + ' - ' + att.value;
     sendBtn.disabled = true; status.textContent = 'שולח...';
     try{
-      const res = await fetch('https://formsubmit.co/ajax/Sapirnisan22@gmail.com', {method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form)});
+      const res = await fetch('https://formsubmit.co/ajax/osnat20012@gmail.com', {method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form)});
       const data = await res.json();
       if (res.ok && String(data.success) === 'true'){
         document.getElementById('thanksMsg').textContent = att.value.indexOf('לא') === 0
